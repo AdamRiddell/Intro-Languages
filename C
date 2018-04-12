@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include <ctype.h>
+
+struct student_struct {
+    char *name;
+    int studentNum;
+};
+
+void print_student(struct student_struct *student)
+{
+
+    printf("Student name is: %s\n", student->name);
+    printf("Student number is: %d\n", student->studentNum);
+
+}
+
+int main(int argc, char *argv[])
+{
+    struct student_struct *student;
+    
+    student = malloc(sizeof(struct student_struct));
+    
+    student->name = argv[1];
+    student->studentNum = atoi(argv[2]);
+    
+    print_student(student);
+
+return 0;
+}
